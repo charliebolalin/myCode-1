@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class UserInput : MonoBehaviour
+{
+    private string playerGuess;
+    public InputField answerField;
+    public Text correctOrWrongtext;
+    public Text clueText;
+
+    string[] myClues1 = { "Green Plant", "Neddle", "Desert" };
+    string[] myClues2 = { "Disney", "Donald", "Pluto" };
+
+
+    string[] wordToGuess = { "Cactus", "Mickey Mouse" };
+
+    public void Start()
+    {
+        clueText.text = myClues1[0];
+    }
+
+
+    public void GetPlayerGuess()
+    {
+        playerGuess = answerField.text;
+       
+
+        if (playerGuess == wordToGuess[0])
+        {
+            correctOrWrongtext.text = "Correct";
+            clueText.text = myClues2[0];
+        }
+
+        else if (playerGuess == wordToGuess[1])
+        {
+            correctOrWrongtext.text = "Correct";
+            
+        }
+
+        else
+        {
+            correctOrWrongtext.text = "Try Again";
+        
+        }
+        
+    }
+    
+}
